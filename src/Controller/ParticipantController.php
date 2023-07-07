@@ -68,9 +68,9 @@ class ParticipantController extends AbstractController
     public function sendMail($participant)
     {
         $email = (new TemplatedEmail())
-            ->from('noreply@gbmacademy.com')
+            ->from('gbmacademy@graphikchannel.com')
             ->to('agnes@actiondeclat.com')
-            ->subject('Nouveau participant')
+            ->subject('Prospect ne participant pas')
             ->htmlTemplate('participant/email.html.twig')
             ->context([
                 'participant' => $participant,
