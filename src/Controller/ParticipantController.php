@@ -25,6 +25,7 @@ class ParticipantController extends AbstractController
     }
 
 
+    #[Route('/', name: 'app_home')]
     #[Route('/pas-interesse', name: 'app_pas_interesse')]
     public function pasInteresse(Request $request): Response
     {
