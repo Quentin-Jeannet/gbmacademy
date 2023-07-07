@@ -1,0 +1,181 @@
+@import "_variables.scss";
+
+body{
+    background-color: rgba($titleColor, 0.1);
+    color: $texteColor;
+    font-family: 'Arial';
+    font-size: 22px;
+    h1{
+        padding-top:15px;
+        color: $titleColor;
+        font-size: 1.5rem;
+        font-weight: 800;
+        
+
+    }
+    h2{
+        color: $subTitleColor;
+    }
+    h3{
+        color: $subSubTitleColor;
+        
+    }
+    .w-hr{
+        width: 150px;
+        hr{
+            opacity: 1;
+            height: 2px;
+        }
+    }
+    .program{
+        h1{
+            font-weight: 900;
+        }
+        h3{
+            font-weight: 900;
+        }
+    }
+    .navbar{
+        // background-color: $subSubTitleColor;
+
+        .navbar-toggler{
+            &:focus{
+                box-shadow: 0 0 0 0rem;
+            }
+            // color: rgba(255,255,255,1);
+            // border-color: rgba(255,255,255,1);
+        }
+        .navbar-nav{
+            .nav-link{
+                // font-family: 'gilroy-mediumuploaded_file';
+                // color: white;
+                padding-right: 0.5rem;
+                padding-left: 0.5rem;
+                &:hover{
+                    text-decoration: underline;
+                }
+                &.active{
+                    background-color: $texteColor;
+                    color: white;
+                }
+            }
+        }
+    }
+    .content-wrapper{
+        min-height: calc(100vh - 60px);
+    }
+    footer{
+        background-color: $subTitleColor;
+        text-align: center;
+        a{
+            color: white;
+        }
+        img{
+            width: 90px;
+        }
+    }
+    form{
+        .form-control{
+            &:focus{
+                background-color: rgba($subSubTitleColor, 0.6);
+                color: white;
+            }
+        }
+        .form-check-input{
+            &:checked{
+                background-color: rgba($subSubTitleColor, 0.6);
+                border-color: rgba($subSubTitleColor, 0.6);
+            }
+        }
+        fieldset {
+            min-width: initial;
+            padding: 16px;
+            margin: initial;
+            margin-bottom: 16px;
+            border-width: 1px;
+            border-style: groove;
+            border-color: rgba($subTitleColor, 0.3);
+            border-radius: 5px;
+        }
+        .legend{
+                float: initial;
+                width: initial;
+                color: $subTitleColor;
+                font-size: 1.3rem;
+        }
+    }
+    .btn-primary{
+        background-color: $titleColor;
+        border-color: $titleColor;
+        color: white;
+        border-radius: 0;
+        min-width: 200px;
+        &:hover{
+            background-color: $subTitleColor;
+            border-color: $subTitleColor;
+        }
+        &:focus{
+            color: #fff;
+            background-color: $titleColor;
+            border-color: $titleColor;
+            box-shadow: 0 0 0 0.25rem  rgba($color: $subTitleColor, $alpha: 0.5)
+        }
+    }
+    label.required{
+        &::after{
+            content: '*';
+            color: red;
+        }
+    }
+    legend.required{
+        &::after{
+            content: '*';
+            color: red;
+        }
+    }
+    .form-check {
+        label.required{
+            &::after{
+                content: '';
+            }
+        }
+    }
+    #suggesstion-box{
+        position: relative;
+        max-height: 200px;
+        width: 100%;
+        overflow: auto;
+        background-color: white;
+        border-bottom: 1px solid #ced4da;
+        border-left: 1px solid #ced4da;
+        border-right: 1px solid #ced4da;
+        ul{
+            list-style-type: none;
+            padding-left: 0;
+            li{
+                padding: 10px 0;
+                text-align: center;
+                border-bottom: 1px solid #ced4da;
+                &:hover{
+                    background-color: #e6e6e6;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    #spinner{
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        background-color: white;
+        opacity: 0.8;
+        .spinner-border{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            // transform: translate(-50%, -50%);
+        }
+    }
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table style="width:600px">
+        <tbody>
+            <tr>
+                <td>Un invité a décliné l'invitation à la 2ème Journée Nationale de la Gbmacademy.</td>
+            </tr>
+            {% if participant.nom %}
+            <tr>
+                <td>Nom: {{participant.nom}}</td>
+            </tr>
+            {% endif %}
+            {% if participant.prenom %}
+            <tr>
+                <td>Prénom: {{participant.prenom}}</td>
+            </tr>
+            {% endif %}
+            <tr>
+                <td>Email: {{participant.email}}</td>
+            </tr>
+            <tr>
+                <td>Raison: {{participant.raison}}</td>
+            </tr>
+            <tr>
+                <td>Toujours inscrit à la newsletter: {{participant.onNewsLetter ? 'Oui' : 'Non'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

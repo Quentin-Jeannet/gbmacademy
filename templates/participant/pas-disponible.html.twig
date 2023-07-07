@@ -1,0 +1,31 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+    {{form_start(form)}}
+    <div class="p-5">
+        <div class="px-4">
+            <p>Vous ne pouvez pas participer à notre événement ?
+            Nous vous transmettrons les différentes
+            communications présentées lors de la 1re Journée
+            Nationale de la GBM Academy.<br>
+            Pour cela, il suffit de cocher la case ci-dessous.<br>
+            Nous espérons vous revoir prochainement.</p>
+            <p><b>Restons en contact</b></p>
+            {{form_widget(form.onNewsLetter)}}
+        </div>
+        <div class="d-flex flex-wrap justify-content-between py-5">
+            <div class="col-6 px-4">{{form_row(form.nom)}}</div>
+            <div class="col-6 px-4">{{form_row(form.prenom)}}</div>
+        </div>
+        <div class="d-flex flex-wrap">
+            <div class="col-6 px-4">{{form_row(form.email)}}</div>
+        </div>
+        <div class="d-flex justify-content-center pt-5">
+            {{form_row(form.submit)}}
+        </div>
+    </div>
+    <p class="form-text text-muted">Champs obligatoire <sup class="text-danger">*</sup></p>
+    {{form_end(form)}}
+{% endblock %}
+
+
