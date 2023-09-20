@@ -15,9 +15,11 @@ body{
     }
     h2{
         color: $subTitleColor;
+            font-weight: 600;
     }
     h3{
-        color: $subSubTitleColor;
+        color: $titleColor;
+            font-weight: 600;
         
     }
     .w-hr{
@@ -26,6 +28,12 @@ body{
             opacity: 1;
             height: 2px;
         }
+    }
+    .w-30{
+        width: 30%;
+    }
+    .fw-600{
+        font-weight: 600;
     }
     .program{
         h1{
@@ -49,6 +57,8 @@ body{
             .nav-link{
                 // font-family: 'gilroy-mediumuploaded_file';
                 // color: white;
+                background-color: #dde1e8;
+                color: #8f9bb4;
                 padding-right: 0.5rem;
                 padding-left: 0.5rem;
                 &:hover{
@@ -63,6 +73,9 @@ body{
     }
     .content-wrapper{
         min-height: calc(100vh - 60px);
+    }
+    .text-color{
+        color: $texteColor;
     }
     footer{
         background-color: $subTitleColor;
@@ -121,18 +134,41 @@ body{
             box-shadow: 0 0 0 0.25rem  rgba($color: $subTitleColor, $alpha: 0.5)
         }
     }
-    label.required{
-        &::after{
-            content: '*';
-            color: red;
-        }
+    .bg-primary{
+        background-color: $titleColor!important;
+        color: white;
     }
-    legend.required{
-        &::after{
-            content: '*';
-            color: red;
-        }
+    .form-check-label{
+        font-size: 18px;
+        vertical-align: text-top;
+        color: black;
     }
+    .form-check-input{
+        width: 18px;
+        height: 18px;
+    }
+    .form-check{
+        margin-right: 1em;
+    }
+    .help{
+        font-size: 14px;
+    }
+    .text-decoration-none{
+        text-decoration: none!important;
+    }
+
+    // label.required{
+    //     &::after{
+    //         content: '*';
+    //         color: red;
+    //     }
+    // }
+    // legend.required{
+    //     &::after{
+    //         content: '*';
+    //         color: red;
+    //     }
+    // }
     .form-check {
         label.required{
             &::after{
@@ -179,3 +215,12 @@ body{
         }
     }
 }
+@media (max-width: 768px) {
+    body{
+        .w-30{
+            width: 70%;
+        }
+
+    }
+}
+

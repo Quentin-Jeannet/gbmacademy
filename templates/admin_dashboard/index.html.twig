@@ -10,7 +10,7 @@
 
 
     <div class="d-flex flex-wrap align-items-stretch py-5">
-        <div class="col-4 px-5">
+        <div class="col-3 px-4">
             <div class="card border p-1 h-100">
                 <div class="card-body">
                     <h5 class="card-title">
@@ -24,7 +24,7 @@
 
             </div>
         </div>
-        <div class="col-4 px-5">
+        <div class="col-3 px-4">
             <div class="card border p-1 h-100">
                 <div class="card-body">
                     <h5 class="card-title">
@@ -38,7 +38,7 @@
 
             </div>
         </div>
-        <div class="col-4 px-5">
+        <div class="col-3 px-4">
             <div class="card border p-1 h-100">
                 <div class="card-body">
                     <h5 class="card-title">
@@ -52,8 +52,23 @@
 
             </div>
         </div>
+        <div class="col-3 px-4">
+            <div class="card border p-1 h-100">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <div class="d-flex justify-content-around align-items-center">
+                            <i class="fas fa-user fa-2x"></i>
+                            <span class="ml-3">Inscrit</span>
+                        </div>
+                    </h5>
+                    <p class="card-text">{{inscrit}} participants ce sont désinscrits</p>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <a href="{{path('app_admin_dashboard_export')}}" class="btn btn-success">Export Excel</a>
+    <a href="{{path('app_admin_dashboard_export_inscription')}}" class="btn btn-success">Export Excel inscrit</a>
+    <a href="{{path('app_admin_dashboard_export')}}" class="btn btn-success">Export Excel refus</a>
     
 </div>
 {% endblock %}

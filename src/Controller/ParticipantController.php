@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use App\Entity\Participant;
+use App\Form\InscriptionType;
 use App\Form\ParticipantType;
+use App\Repository\UserRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;
 use Symfony\Component\HttpFoundation\Request;
@@ -26,9 +28,35 @@ class ParticipantController extends AbstractController
 
 
     #[Route('/', name: 'app_home')]
-    #[Route('/pas-interesse', name: 'app_pas_interesse')]
-    public function pasInteresse(Request $request): Response
+    public function programme(): Response
     {
+        return $this->render('participant/programme.html.twig');
+    }
+
+    #[Route('/inscription', name: 'app_inscription')]
+    public function inscription(Request $request): Response
+    {
+
+        $participant = new Participant();
+        $form = $this->createForm(InscriptionType::class, $participant);
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->em->persist($participant);
+            $this->em->flush();
+            // $this->sendMail($participant);
+            $this->addFlash('success', 'Votre inscription a bien été prise en compte');
+            return $this->redirectToRoute('app_home');
+        }
+        return $this->render('participant/inscription.html.twig', [
+            'form' => $form->createView(),
+        ]);
+    }
+
+
+    #[Route('/pas-interesse', name: 'app_pas_interesse')]
+    public function pasInteresse(Request $request, UserRepository $userRepository): Response
+    {
+
         $participant = new Participant();
         $form = $this->createForm(ParticipantType::class, $participant);
         $form->handleRequest($request);

@@ -39,6 +39,22 @@ class ParticipantRepository extends ServiceEntityRepository
         }
     }
 
+    public function findByRaisonNotNull()
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.raison IS NOT NULL')
+            ->getQuery()
+            ->getResult();
+    }
+
+    public function findByRaisonNull()
+    {
+        return $this->createQueryBuilder('p')
+            ->andWhere('p.raison IS NULL')
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return Participant[] Returns an array of Participant objects
 //     */

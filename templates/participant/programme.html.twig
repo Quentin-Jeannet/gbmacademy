@@ -1,0 +1,77 @@
+{% extends "base-2.html.twig" %}
+{% block body %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+    <div class="container-fluid">
+        <a class="navbar-brand p-4 w-30" href="#">
+            <img src="{{asset('images/logo2.png')}}" alt="logo" class="img-fluid">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active me-2" aria-current="page" href="{{path('app_home')}}">Programme</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link me-2" href="{{path('app_inscription')}}">Inscription</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+    <img src="{{asset('images/banner-programme.png')}}" alt="" class="img-fluid">
+    <div class="p-lg-5">
+        {% for key, messages in app.flashes %}
+        <div role="alert" class="alert alert-{{ key }} my-2">
+            {% for message in messages %}
+            {{ message }}
+            {% endfor %}
+        </div>
+        {% endfor %}
+        <div class="px-2">
+            <p class=""><strong>Ces réunions se dérouleront sous la forme de 2 demi-journées :</strong></p>
+            <h2>Vendredi 8 décembre de 14h à 18h</h2>
+            <h3 class="pb-2">RÉUNIONS EN PLENIÈRE ANIMÉES PAR UNE JOURNALISTE SCIENTIFIQUE</h3>
+            <ul class="px-3">
+                <li><strong>Présentations des dernières actualités sur le glioblastome et les conséquences
+                sur sa prise en charge,</strong> <i>par les Pr E. Moyal, Pr F. Ducray, Pr J. Honnorat.</i>
+                </li>
+                <li><strong>Les dernières connaissances scientifiques autour de nos cognitions et
+                comportements,</strong> <i>par le Pr P-M Lledo.</i>
+                </li>
+                <li><strong>Les perspectives et limites de l’IA,</strong> <i>par Luc Ferry, philosophe.</i>
+                </li>
+                <li><strong>La place de l’émotion dans l’annonce du diagnostic :</strong> <i>point de vue d’une
+                psycho-oncologue et illustration par une troupe de théâtre.</i>
+                </li>
+            </ul>
+            <div class="w-hr py-2">
+                <hr>
+            </div>
+            <h2>Samedi 9 décembre de 9h à 13h</h2>
+            <h3 class="pb-2">2 ATELIERS PAR GROUPES</h3>
+            <ul class="px-3">
+                <li><strong>La réthorique en pratique</strong><br>L’art de communiquer avec les patients, <i>animé par Romain Lambret, philosophe
+                et Nathaniel Scher, radiothérapeute.</i>
+                </li>
+                <li><strong>Forum théâtre «Entretiens-toi bien»</strong><br>Théâtre immersif autour de l’annonce du diagnostic, <i>par la Compagnie d’Arcalande et
+                synthèse des échanges avec Florence Barruel, psycho-oncologue.</i>
+                </li>
+
+            </ul>
+
+            <div class="d-flex justify-content-center my-5">
+                <a href="{{path('app_inscription')}}" class="btn btn-primary">SUITE</a>
+            </div>
+
+            <footer class="p-2 text-white py-4">
+                <p class="mb-2">© 2023 Novocure GmbH, tous droits réservés.</p>
+                <p>Novocure® et Novocollege® sont des marques commerciales de Novocure GmbH. </p>
+                <p>FR-SRC-0032. Août 2023.</p>
+                <p>NOVOCURE FRANCE SAS 4, rue de Marivaux Paris 75002 France</p>
+            </footer>
+
+        </div>
+{% endblock %}
