@@ -43,7 +43,7 @@ class ParticipantController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $this->em->persist($participant);
             $this->em->flush();
-            // $this->sendMail($participant);
+            $this->sendMailInscrit($participant);
             $this->addFlash('success', 'Votre inscription a bien été prise en compte');
             return $this->redirectToRoute('app_home');
         }
@@ -101,6 +101,19 @@ class ParticipantController extends AbstractController
             ->to('agnes@actiondeclat.com')
             ->subject('Prospect ne participant pas')
             ->htmlTemplate('participant/email.html.twig')
+            ->context([
+                'participant' => $participant,
+            ]);
+        $this->mailer->send($email);
+
+    }
+    public function sendMailInscrit($participant)
+    {
+        $email = (new TemplatedEmail())
+            ->from('gbmacademy@graphikchannel.com')
+            ->to('agnes@actiondeclat.com')
+            ->subject('Nouvel inscrit')
+            ->htmlTemplate('participant/email_inscrit.html.twig')
             ->context([
                 'participant' => $participant,
             ]);

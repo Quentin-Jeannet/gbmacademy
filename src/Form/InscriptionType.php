@@ -42,7 +42,7 @@ class InscriptionType extends AbstractType
             ],
             ])
             ->add('onNewsLetter', CheckboxType::class , [
-                'required' => false,
+                'required' => true,
                 'label' => ' Je souhaite pouvoir recevoir par email de Novocure les informations et invitations relatives aux évènements mis en place, ainsi qu’à ses produits, services ou toutes autres informations scientifiques. Vous pouvez vous désinscrire à tout moment via ces emails. Pour plus d’informations, la politique de confidentialité est accessible à l’adresse suivante : <a class="text-color" href="https:/docs.novocure.eu/politique-de-confidentialité-novocure-France/">https:/docs.novocure.eu/politique-de-confidentialité-novocure-France/</a>',
                 'label_html' => true,
             'label_attr' => [
@@ -160,15 +160,6 @@ class InscriptionType extends AbstractType
                 'expanded' => true,
                 'multiple' => false,
                 'required' => true,
-                'label_attr' => [
-                    'class' => 'col-sm-12',
-                ],
-            ])
-            ->add('conditions', CheckboxType::class , [
-                'required' => false,
-                'label' => 'J’ai lu et j’accepte les conditions d’utilisation',
-                'label_html' => true,
-                'mapped' => false,
                 'label_attr' => [
                     'class' => 'col-sm-12',
                 ],
